@@ -61,7 +61,7 @@ const Test = () => {
           Nearby Doctors & Hospitals
         </h1>
 
-        {loading && <p className="text-center text-gray-500">Loading...</p>}
+        {loading && <p className="text-center text-gray-200">Loading...</p>}
         {error && <p className="text-center text-red-500">Error: {error}</p>}
         {!userLocation && !loading && !error && (
           <p className="text-center">
@@ -73,28 +73,28 @@ const Test = () => {
           {doctors.map((doctor, index) => (
             <div
               key={index}
-              className="p-4 border rounded-lg shadow-md hover:shadow-lg transition bg-gray-800"
+              className="p-4 border rounded-lg shadow-md hover:shadow-lg transition bg-white"
             >
               <img
                 src={
                   doctor.photos
-                    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${doctor.photos[0].photo_reference}&key=AlzaSyhf67V_lTLBb0wcTp9I5nLD0XOD40fk3TG`
+                    ? `/images/doctor-card.png`
                     : doctor.icon
                 }
                 alt={doctor.name}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full h-48 object-contain rounded-lg"
               />
-              <h2 className="text-xl font-semibold text-gray-200 mt-4">
+              <h2 className="text-xl font-semibold text-gray-800 mt-4">
                 {doctor.name.slice(0, 45) || "No Name Available"}
               </h2>
-              <p className="text-gray-300 ">
+              <p className="text-gray-800 ">
                 Address: {doctor.vicinity || "No Address Available"}
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-800">
                 Rating: {doctor.rating || "N/A"} (
                 {doctor.user_ratings_total || 0} reviews)
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-800">
                 {doctor.opening_hours?.open_now
                   ? "Currently Open"
                   : "Currently Closed"}
