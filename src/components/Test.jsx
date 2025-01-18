@@ -8,7 +8,7 @@ const Test = () => {
 
   const fetchDoctors = async (latitude, longitude) => {
     setLoading(true);
-    const apikey = `AlzaSyhf67V_lTLBb0wcTp9I5nLD0XOD40fk3TG`;
+    const apikey = `AlzaSyKm7tR7Xo5eEC-aPVj7mjfnVMZmGsnZt8Z`;
     const radius = 5000;
     const type = `doctor`;
 
